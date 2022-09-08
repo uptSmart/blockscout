@@ -9,47 +9,70 @@ defmodule BlockScoutWeb.LayoutView do
 
   @issue_url "https://github.com/blockscout/blockscout/issues/new"
   @default_other_networks [
+    # %{
+    #   title: "POA",
+    #   url: "https://blockscout.com/poa/core"
+    # },
+    # %{
+    #   title: "Sokol",
+    #   url: "https://blockscout.com/poa/sokol",
+    #   test_net?: true
+    # },
+    # %{
+    #   title: "Gnosis Chain",
+    #   url: "https://blockscout.com/xdai/mainnet"
+    # },
+    # %{
+    #   title: "Ethereum Classic",
+    #   url: "https://blockscout.com/etc/mainnet",
+    #   other?: true
+    # },
+    # %{
+    #   title: "RSK",
+    #   url: "https://blockscout.com/rsk/mainnet",
+    #   other?: true
+    # }
+
     %{
-      title: "POA",
-      url: "https://blockscout.com/poa/core"
+      title: "Mainnet",
+      url: "https://evm-explorer.mainnet.uptick.network/",
+      other?: true
     },
+
     %{
-      title: "Sokol",
-      url: "https://blockscout.com/poa/sokol",
+      title: "Testnet",
+      url: "https://evm-explorer.testnet.uptick.network/",
       test_net?: true
-    },
-    %{
-      title: "Gnosis Chain",
-      url: "https://blockscout.com/xdai/mainnet"
-    },
-    %{
-      title: "Ethereum Classic",
-      url: "https://blockscout.com/etc/mainnet",
-      other?: true
-    },
-    %{
-      title: "RSK",
-      url: "https://blockscout.com/rsk/mainnet",
-      other?: true
     }
   ]
 
   alias BlockScoutWeb.SocialMedia
 
+  # xxl
+  # def logo do
+  #   Keyword.get(application_config(), :logo)
+  # end
+
   def logo do
-    Keyword.get(application_config(), :logo)
+    Keyword.get(application_config(), :logo) || "/images/blockscout_logo.svg"
   end
 
+  # xxl
+  # def logo_footer do
+  #   Keyword.get(application_config(), :logo_footer) || Keyword.get(application_config(), :logo)
+  # end
   def logo_footer do
-    Keyword.get(application_config(), :logo_footer) || Keyword.get(application_config(), :logo)
+    Keyword.get(application_config(), :logo_footer) || Keyword.get(application_config(), :logo) ||
+      "/images/blockscout_logo_w.svg"
   end
 
   def logo_text do
     Keyword.get(application_config(), :logo_text) || nil
   end
 
+  # xxl add testnet
   def subnetwork_title do
-    Keyword.get(application_config(), :subnetwork) || "Sokol"
+    Keyword.get(application_config(), :subnetwork) || "TestNet"
   end
 
   def network_title do
