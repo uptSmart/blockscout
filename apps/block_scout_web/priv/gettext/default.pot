@@ -3350,3 +3350,6 @@ msgstr ""
 #: lib/block_scout_web/templates/transaction/_tile.html.eex:9
 msgid "Error in internal transactions"
 msgstr ""
+
+msgid "Uptick"
+msgstr "UOC"
